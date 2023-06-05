@@ -1,12 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
   const x = document.getElementById("b17");
-  x.addEventListener("click", toggle);
-
-  function toggle() {
+  x.addEventListener("click", function () {
     // console.log("hoo");
     const eButtons = document.querySelectorAll("#e1, #e2, #e3, #e4, #e5,#e6, #e7, #e8, #e9, #e10");
     const no1 = document.querySelector(".no1");
-
     eButtons.forEach((button) => {
       if (button.style.display === "none") {
         button.style.display = "inline-block";
@@ -16,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         no1.style.gridTemplateColumns = "repeat(4, 1fr)";
       }
     });
-  }
+  });
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -85,4 +82,28 @@ document.addEventListener('DOMContentLoaded', function() {
   inverse.addEventListener('click', function() {
     display.value = display.value + '^(-1)' ;
   });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const display = document.querySelector('.display12');
+  const equalButton = document.getElementById('b20');
+  
+  equalButton.addEventListener('click', function() {
+    const expression = display.value;
+    const result = evaluateExpression(expression);
+    display.value = result !== null ? result : 'MATH ERROR';
+
+    setTimeout(function() {
+      display.value = '';
+    }, 1000);
+  });
+
+  function evaluateExpression(expression) {
+    try {
+      return eval(expression); 
+    } catch (error) {
+      console.log(error);
+      return null; 
+    }
+  }
 });
