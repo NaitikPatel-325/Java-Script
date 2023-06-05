@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+fieldset {
+  padding: 10px;
+  padding-top: 20px;
+}
+
+.display12 {
+  width: 95%;
+  height: 40px;
+  background-color: white;
+  margin-bottom: 15px;
+  text-align: right; 
+  padding-right: 10px; 
+}
+
+#e1,#e2,#e3,#e4,#e5,#e6,#e7,#e8,#e9,#e10 {
+  display: none;
+}
+
+.no1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+}
+
+#b20 {
+  background-color: lavender;
+  border-radius: 10%;
+}
