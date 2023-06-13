@@ -85,6 +85,28 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+  const buttons = document.querySelectorAll('.number, .equal');
+  let activeButton = null;
+
+  buttons.forEach(function(button) {
+    button.addEventListener('mouseenter', function() {
+      if (activeButton !== null) {
+        activeButton.style.background = ""; 
+      }
+      button.style.background = "red";
+      activeButton = button; 
+    });
+
+    button.addEventListener('mouseleave', function() {
+      button.style.background = "";
+    });
+  });
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
   const display = document.querySelector('.display12');
   const equalButton = document.getElementById('b20');
   
@@ -95,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setTimeout(function() {
       display.value = '';
-    }, 1000);
+    }, 5000);
   });
 
   function evaluateExpression(expression) {
