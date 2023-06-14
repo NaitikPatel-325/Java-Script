@@ -5,24 +5,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="sc.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="sc.js"></script>
 </head>
 
 <body>
     <h1 class="na">Result</h1>
-    <label for="smarks">Enter Sessional Marks</label>
-    <button type="button" id="slabel">Click here</button>
-    <div class="popup" id="popup" style="display: none;">
-        <label for="m1">1st Sessional Marks:</label>
-        <input type="number" id="m1" name="m1" class="num" required>
-        <label for="m2">2nd Sessional Marks:</label>
-        <input type="number" id="m2" name="m2" class="num" required>
-        <label for="m3">3rd Sessional Marks:</label>
-        <input type="number" id="m3" name="m3" class="num" required>
-        <button type="submit" class="submit" id="sub">Submit</button>
-    </div>
+    <fieldset>
+        <div class="main">
 
+            <div class="MATHS">
+                <label for="smarks">Maths Sessional Marks:</label>
+                <button type="button" id="slabel1">Click here</button>
+                <div class="popup" id="popup1" style="display: none;">
+                    <label for="m1">1st Sessional Marks:</label>
+                    <input type="number" id="m1" name="m1" class="num" required>
+                    <label for="m2">2nd Sessional Marks:</label>
+                    <input type="number" id="m2" name="m2" class="num" required>
+                    <label for="m3">3rd Sessional Marks:</label>
+                    <input type="number" id="m3" name="m3" class="num" required>
+                    <button type="submit" class="submit" id="sub1">Submit</button>
+                </div>
+                <br>
+                <br>
+                <div class="ext-marks">
+                    <label for="ext-marks">External Marks:</label>
+                    <input type="number" id="e1" name="e2" class="num" required>
+                </div>
+            </div>
+
+            <hr class="separator">
+
+            <div class="PHYSICS">
+                <label for="smarks">Physics Sessional Marks:</label>
+                <button type="button" id="slabel2">Click here</button>
+                <div class="popup" id="popup2" style="display: none;">
+                    <label for="m1">1st Sessional Marks:</label>
+                    <input type="number" id="m4" name="m4" class="num" required>
+                    <label for="m2">2nd Sessional Marks:</label>
+                    <input type="number" id="m5" name="m5" class="num" required>
+                    <label for="m3">3rd Sessional Marks:</label>
+                    <input type="number" id="m6" name="m6" class="num" required>
+                    <button type="submit" class="submit" id="sub2">Submit</button>
+                </div>
+                <br>
+                <div class="lab1">
+                    <label for="lmarks">Lab Marks:</label>
+                    <input type="number" id="l1" name="l1" class="num" required>
+                </div>
+                <div class="ext-marks">
+                    <label for="ext-marks">External Marks:</label>
+                    <input type="number" id="e2" name="e2" class="num" required>
+                </div>
+            </div>
+
+            <hr class="separator">
+
+            <div class="PPS">
+                <label for="smarks">PPS Sessional Marks:</label>
+                <button type="button" id="slabel3">Click here</button>
+                <div class="popup" id="popup3" style="display: none;">
+                    <label for="m1">1st Sessional Marks:</label>
+                    <input type="number" id="m7" name="m7" class="num" required>
+                    <label for="m2">2nd Sessional Marks:</label>
+                    <input type="number" id="m8" name="m8" class="num" required>
+                    <label for="m3">3rd Sessional Marks:</label>
+                    <input type="number" id="m9" name="m9" class="num" required>
+                    <button type="submit" class="submit" id="sub3">Submit</button>
+                </div>
+                <br>
+                <div class="lab1">
+                    <label for="lmarks">Lab Marks:</label>
+                    <input type="number" id="l2" name="l2" class="num" required>
+                </div>
+                <div class="ext-marks">
+                    <label for="ext-marks">External Marks:</label>
+                    <input type="number" id="e3" name="e3" class="num" required>
+                </div>
+            </div>
+
+            <hr class="separator">
+
+            <div class="HW1">
+                <div class="lab1">
+                    <label for="lmarks">HW I Lab Marks:</label>
+                    <input type="number" id="l3" name="l3" class="num" required>
+                </div>
+            </div>
+
+            <div class="HW2">
+                <div class="lab1">
+                    <label for="lmarks">HW II Lab Marks:</label>
+                    <input type="number" id="l4" name="l4" class="num" required>
+                </div>
+            </div>
+
+            <hr class="separator">
+
+            <div class="ENGLISH">
+                <div class="lab1">
+                    <label for="lmarks">ENGLISH Lab Marks:</label>
+                    <input type="number" id="l5" name="l5" class="num" required>
+                </div>
+                <div class="ext-marks">
+                    <label for="ext-marks">External Marks:</label>
+                    <input type="number" id="e4" name="e4" class="num" required>
+                </div>
+            </div>  
+        </div>
+    </fieldset>
 </body>
 
 </html>
