@@ -80,12 +80,28 @@ fieldset{
 .HW2 .lab1{
     margin-bottom: 3%; 
 }
-.ENGLISH .ext-marks{
+.ENGLISH .ext-marks , .PHYSICS .ext-marks , .PPS .ext-marks{
     margin-bottom: 1%; 
-    margin-top: 1%;w;
+    margin-top: 1%;
 }
 .separator {
     border: none;
     border-top: 1px solid black;
     margin: 20px 0;
+}
+
+.calculate button{
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2%;
+    margin-left: 42%;
+    margin-bottom: 2%;
+}
+
+.calculate button:hover {
+    background-color: #45a049;
 }
