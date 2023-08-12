@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="contain">
+      <h1>Tic Tac Toe</h1>
+      <div class="g">
+        <div class="row">
+          <button class="cell" id="c0" onclick="move(0)"></button>
+          <button class="cell" id="c1" onclick="move(1)"></button>
+          <button class="cell" id="c2" onclick="move(2)"></button>
+        </div>
+        <div class="row">
+          <button class="cell" id="c3" onclick="move(3)"></button>
+          <button class="cell" id="c4" onclick="move(4)"></button>
+          <button class="cell" id="c5" onclick="move(5)"></button>
+        </div>
+        <div class="row">
+          <button class="cell" id="c6" onclick="move(6)"></button>
+          <button class="cell" id="c7" onclick="move(7)"></button>
+          <button class="cell" id="c8" onclick="move(8)"></button>
+        </div>
+      </div>
+      <button class="restart" onclick="resetGame()">Restart Game</button>
+      <p id="winner"></p>
+    </div>
+  </body>
+</html>
