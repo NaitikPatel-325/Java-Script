@@ -1,107 +1,79 @@
-.popup {
-    display: none;
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid black;
-    border-radius: 5px;
-    background: #fff;
+body, h1, h2, h3, p, button, label, input {
+    margin: 0;
+    padding: 0;
     border: 0;
-    width: 240px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    cursor: pointer;
-    transform: translate(-50%,-50%)
+    font-family: Arial, sans-serif;
 }
 
-.popup label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.popup input[type="number"] {
-    display: block;
-    margin-bottom: 10px;
-    padding: 5px;
-    width: 200px;
-}
-
-.popup .submit {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 27%;    
-}
-
-.popup .submit:hover {
-    background-color: #45a049;
-}
 body {
-    background-color: rosybrown;
+    background-color: #2E2E2E;
+    color: #E0E0E0;
+    line-height: 1.6;
+    padding: 20px;
 }
 
-.na {
+.main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+#OUTPUT{
     text-align: center;
 }
-
-.main{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    font-size: 23px;
-    border-radius: 10px;
-    background-color: white;
+h1 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-fieldset{
-    border-radius: 10px;
-    border-color: black;
-    width: 40%;
-    background-color: grey;
-    margin-left: 30%;
-}
-
-.MATHS label , .PHYSICS label , .PPS label ,.HW1 label ,.HW2 label ,.ENGLISH label {
-    margin: 20px;
-}
-
-.MATHS,.PHYSICS,.PPS,.HW2{
-    margin-top: 2%;
-}
-
-.PHYSICS .lab1 ,.PPS .lab1 ,.HW1 .lab1 {
-    margin-top: 2%;
-    margin-bottom: 3%; 
-}
-
-.HW2 .lab1{
-    margin-bottom: 3%; 
-}
-.ENGLISH .ext-marks , .PHYSICS .ext-marks , .PPS .ext-marks{
-    margin-bottom: 1%; 
-    margin-top: 1%;
-}
-.separator {
-    border: none;
-    border-top: 1px solid black;
-    margin: 20px 0;
-}
-
-.calculate button{
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
+fieldset {
+    border: 1px solid #555;
+    padding: 20px;
     border-radius: 5px;
-    cursor: pointer;
-    margin-top: 2%;
-    margin-left: 42%;
-    margin-bottom: 2%;
+    background-color: #444;
 }
 
-.calculate button:hover {
-    background-color: #45a049;
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #E0E0E0;
+}
+
+button {
+    background-color: #009688;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+.num {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #555;
+    border-radius: 3px;
+    background-color: #333;
+    color: #E0E0E0;
+}
+
+.popup {
+    border: 1px solid #555;
+    padding: 10px;
+    display: none;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 20px;
+    }
+    
+    body {
+        padding: 10px;
+    }
+    
+    .num {
+        width: 100%;
+    }
 }
