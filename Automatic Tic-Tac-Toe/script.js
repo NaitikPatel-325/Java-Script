@@ -18,6 +18,9 @@ function rem(number) {
     if (index !== -1) {
       mark.splice(index, 1);
     }
+    else{
+      console.log("Not Found");
+    }
   }
   
 
@@ -133,7 +136,8 @@ function iswin() {
   
   
   function issafe() {
-  
+    // console.log("Hii1235454")
+    console.log(board,"rem");
     if (board[0] == 'X' && board[2] == 'X')        //1 st row
       if (board[1] == ' ')
         return 2;
@@ -232,9 +236,30 @@ function iswin() {
     return 0;
   }
   
+  function showAlertAndRestart() {
+    if(winner=='Y'){
+      winner=null;
+      let p = document.getElementById('winner');
+      p.innerText = "Computer wins!";
+      setTimeout(function() {
+        restart();
+      }, 1000);
+      return true;
+    }
+    else{
+      return false;
+    }
+    
+  }
   const buttons = document.querySelectorAll('.cell');
   
-  function move(index) {
+  function move(index) 
+  {
+    if(showAlertAndRestart()){
+      console.log("hello");
+      return;
+    };
+    console.log(board);
     if (GameActive && board[index] === ' ') {
       board[index] = 'X';
       document.getElementById(`k${index}`).innerHTML = 'X';
@@ -246,11 +271,12 @@ function iswin() {
     }
   
     if (GameActive) {
+      if(mark.length!==0){
         if (i == 4) {
           k = 1;
         }
         console.log(i);
-        if (i == 0) {
+        if (i === 0) {
           if (board[4] == ' ') {
             board[4] = 'O';
             rem(5);
@@ -262,39 +288,43 @@ function iswin() {
             rem(1);
             document.getElementById(`k0`).innerHTML = 'O';
           }
-  
         }
         else {
           if (i === 1) {
             s = issafe();
-            // console.log(s);
-            if (s) {
-              board[s - 1] = 'O';
+            console.log(s,"xtd");
+            if (s) {  
+              board[s-1] = 'O';
               rem(s);
               document.getElementById(`k${s - 1}`).innerHTML = 'O';
   
             }
             else {
-              if ((board[0] == 'X' || board[2] == 'X' || board[6] == 'X' || board[8] == 'X') && flag == 0) {
-                board[7] = 'O';
-                rem(8);
-                document.getElementById(`k7`).innerHTML = 'O';
-  
+              console.log("hii4567",board);
+              if ((board[0] == 'X' || board[2] == 'X' || board[6] == 'X' || board[8] == 'X') && flag == 0 && board[7]==" " ) {
+                console.log("k1");
+                if(board[7]==" "){
+                  board[7] = 'O';
+                  rem(8);
+                  document.getElementById(`k7`).innerHTML = 'O'; 
+                }
               }
               else if (flag === 1) {
-  
-                board[6] = 'O';
-                rem(7);
-                document.getElementById(`k6`).innerHTML = 'O';
-  
+                console.log("k2");
+                if(board[6]==' '){
+                  board[6] = 'O';
+                  rem(7);
+                  document.getElementById(`k6`).innerHTML = 'O';
+                }
               }
               else {
+                console.log("k3");
                 if (board[5] == 'X' || board[7] == 'X') {
                   if (board[8] == ' ') {
+                    console.log("k7");
                     board[8] = 'O';
                     rem(9);
                     document.getElementById(`k8`).innerHTML = 'O';
-  
                   }
                 }
                 else if (board[1] == 'X' || board[3] == 'X') {
@@ -320,6 +350,7 @@ function iswin() {
                     document.getElementById(`k6`).innerHTML = 'O';
                   }
                   else {
+                    document.getElementById(`k${mark[1]-1}`).innerHTML = 'O';
                     board[mark[1] - 1] = 'O';
                     rem(mark[1]);
                   }
@@ -329,7 +360,9 @@ function iswin() {
           }
           else {
             s = issafe();
+            console.log(s);
             w = iswin();
+            console.log(w);
             if (w) {
               board[w - 1] = 'O';
               rem(w);
@@ -338,29 +371,39 @@ function iswin() {
               winner = 'Y';
             }
             else {
+              console.log("s");
               if (s) {
                 board[s - 1] = 'O';
-                rem(s);
                 document.getElementById(`k${s - 1}`).innerHTML = 'O';
+                rem(s);
               }
               else {
+                console.log(mark[1],"assigned");
                 board[mark[1] - 1] = 'O';
-                rem(mark[1]);
                 document.getElementById(`k${mark[1] - 1}`).innerHTML = 'O';
+                rem(mark[1]);
               }
             }
           }
         }
-  
         i = i + 1;
       }
-    };  
+      else{
+        let p = document.getElementById('winner');
+        p.innerHTML = "Tie!";
+      }
+    }
+      
+  };  
 
 function restart() {
   GameActive = true;
   board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '];
   winner = null;
+  mark = [1,2,3,4,5,6,7,8,9];
   i=0;
+  let p = document.getElementById('winner');
+  p.innerHTML = "";
   for (let j = 0; j < 9; j++) {
     document.getElementById(`k${j}`).innerHTML = ' ';
   }
