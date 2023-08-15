@@ -137,54 +137,61 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   
   
-    var ca = document.getElementById("bt1");
-    ca.addEventListener("click", function() {
-  
-      var ex1 = document.getElementById("e1");
-      var ex2 = document.getElementById("e2");
-      var ex3 = document.getElementById("e3");
-      var ex4 = document.getElementById("e4");
-  
-      var la1 = document.getElementById("l1");
-      var la2 = document.getElementById("l2");
-      var la3 = document.getElementById("l3");
-      var la4 = document.getElementById("l4");
-      var la5 = document.getElementById("l5");
-  
-      var t1 = parseInt(ex1.value) + r1 + 4;
-      var t2 = parseInt(ex2.value) + r2 + 4 + parseInt(la1.value);
-      var t3 = parseInt(ex3.value) + r3 + 4 + parseInt(la2.value);
-      var t4 = parseInt(la3.value) + parseInt(la4.value);
-      var t5 = parseInt(ex4.value) + 4 + parseInt(la5.value);
+   // ... (Previous code)
+
+var ca = document.getElementById("bt1");
+ca.addEventListener("click", function() {
+
+  var ex1 = document.getElementById("e1");
+  var ex2 = document.getElementById("e2");
+  var ex3 = document.getElementById("e3");
+  var ex4 = document.getElementById("e4");
+
+  var la1 = document.getElementById("l1");
+  var la2 = document.getElementById("l2");
+  var la3 = document.getElementById("l3");
+  var la4 = document.getElementById("l4");
+  var la5 = document.getElementById("l5");
+
+  var t1 = parseInt(ex1.value) + r1 + 4;
+  var t2 = parseInt(ex2.value) + r2 + 4 + parseInt(la1.value);
+  var t3 = parseInt(ex3.value) + r3 + 4 + parseInt(la2.value);
+  var t4 = parseInt(la3.value) + parseInt(la4.value);
+  var t5 = parseInt(ex4.value) + 4 + parseInt(la5.value);
+
   
       // console.log(t1);
       // console.log(t2);
       // console.log(t3);
       // console.log(t4);
       // console.log(t5);
-  
-      var ra1 = calculateGrade(t1);
-      var ra2 = calculateGrade((t2 * 100.00) / 150);
-      var ra3 = calculateGrade((t3 * 100.00) / 150);
-      var ra4 = calculateGrade(t4);
-      var ra5 = calculateGrade((t5 * 100.00) / 90);
-  
+
+  // Check if marks for all subjects are provided
+  if (isNaN(t1) || isNaN(t2) || isNaN(t3) || isNaN(t4) || isNaN(t5)) {
+    alert("Please input marks for all subjects.");
+    return;
+  }
+
+  var ra1 = calculateGrade(t1);
+  var ra2 = calculateGrade((t2 * 100.00) / 150);
+  var ra3 = calculateGrade((t3 * 100.00) / 150);
+  var ra4 = calculateGrade(t4);
+  var ra5 = calculateGrade((t5 * 100.00) / 90);
+
+ 
       // console.log(ra1);
       // console.log(ra2);
       // console.log(ra3);
       // console.log(ra4);
-      // console.log(ra5);
-  
-      var total = ((parseFloat(ra1) * cr1) / 100.00) + ((parseFloat(ra2) * cr2) / 100.00) + ((parseFloat(ra3) * cr3) / 100.00) + ((parseFloat(ra4) * cr4) / 100.00) + ((parseFloat(ra5) * cr5) / 100.00);
-      // console.log(total/gt);
-  
-      var ou = document.getElementById("OUTPUT");
-      ou.innerHTML = "Your SPI IS " + (total / gt) * 10.00;
-  
-    });
-  
-  
-  
+      // console.log(ra5); 
+
+  var total = ((parseFloat(ra1) * cr1) / 100.00) + ((parseFloat(ra2) * cr2) / 100.00) + ((parseFloat(ra3) * cr3) / 100.00) + ((parseFloat(ra4) * cr4) / 100.00) + ((parseFloat(ra5) * cr5) / 100.00);
+
+  var ou = document.getElementById("OUTPUT");
+  ou.innerHTML = "Your SPI IS " + (total / gt) * 10.00;
+
+});
+    
     // Function to calculate the grade based on the percentage
     function calculateGrade(percentage) {
       for (var i = 0; i < gradeRanges.length; i++) {
