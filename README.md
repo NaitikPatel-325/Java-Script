@@ -4,7 +4,7 @@ This repository contains a collection of JavaScript applications that showcase v
 
 ## Automatic Tic Tac Toe
 
-Play the classic game of Tic Tac Toe against an AI opponent. The AI's moves are strategically determined based on the current game state. Take turns by clicking on the game board. Can you outsmart the AI?
+Enjoy a game of classic Tic Tac Toe against the computer. Take turns by clicking on the game board. Can you beat the computer and emerge as the Tic Tac Toe champion?
 
 ## Basic Calculator
 
@@ -13,6 +13,5 @@ A user-friendly basic calculator application built with JavaScript. Perform addi
 ## SPI Calculator
 
 Calculate the Signal-Pairing Index (SPI) using this JavaScript application. Input your data sets, and the calculator will compute the SPI, providing insights into data correlations. A valuable tool for data analysts and researchers.
-
 Feel free to explore each project's folder for more details on usage and implementation.
 
